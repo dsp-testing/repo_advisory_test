@@ -1,0 +1,18 @@
+name: Pull Request Check
+
+# Trigger the workflow on pull request events
+on:
+  pull_request:
+    branches: [ main ] # Only run for PRs targeting the 'main' branch
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Check out the code from the PR branch
+      - name: Checkout Code
+        uses: [actions/checkout@v4](https://github.com)
+
+      # 2. Run a simple script (e.g., your tests or linting)
+      - name: Run Tests
+        run: echo "Running automated tests..." && exit 0
